@@ -1,10 +1,10 @@
 :root {
-    --primaria: #003366;
-    --secundaria: #ffcc00;
-    --perigo: #cc0000;
-    --texto: #1a1a1a;
-    --fundo: #ffffff;
-    --fundo-cartao: #f0f4f8;
+    --primaria: #006edb;
+    --secundaria: #dbbd44;
+    --perigo: #ff9898;
+    --texto: #3a1f1f;
+    --fundo: #ffd9d9;
+    --fundo-cartao: #bcdbfa;
 }
 
 * {
@@ -22,6 +22,47 @@ body {
     background-color: var(--fundo);
 }
 
+/* --- MENU DE ACESSIBILIDADE --- */
+.barra-acessibilidade {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    z-index: 1000;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.botao-controle {
+    background: white;
+    color: #333;
+    border: 2px solid var(--secundaria);
+    padding: 10px 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.botao-controle:hover {
+    background: var(--secundaria);
+}
+
+.botao-leitura {
+    background: #28a745;
+    color: white;
+    border: none;
+}
+
 /* 1. Início: Banner com Botão de Ajuda */
 .banner {
     background-color: var(--primaria);
@@ -34,6 +75,7 @@ body {
 .banner h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    padding-top: 70px;
 }
 
 .botao-ajuda {
@@ -132,24 +174,40 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* 4. Como saber se estou caindo em um golpe? */
+/* --- SEÇÃO GOLPES --- */
 .alerta-golpe {
     list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
 }
 
 .alerta-golpe li {
-    background: #ffe6e6;
-    margin-bottom: 15px;
-    padding: 20px;
-    border-radius: 10px;
+    background: #fff5f5;
+    padding: 25px;
+    border-radius: 20px;
+    border: 2px solid #ffe3e3;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    gap: 20px;
+    transition: background 0.2s;
 }
 
-.alerta-golpe li::before {
-    content: "⚠️";
-    margin-right: 15px;
-    font-size: 1.5rem;
+.alerta-golpe li:hover {
+    background: #fff1f1;
+}
+
+.alerta-golpe .icone-alerta {
+    font-size: 2.5rem;
+    background: var(--branco);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+    box-shadow: 0 4px 8px rgba(211, 47, 47, 0.1);
 }
 
 footer {
@@ -169,6 +227,7 @@ footer {
 
     .banner h1 {
         font-size: 1.8rem;
+        padding-top: 80px;
     }
 
     .botao-ajuda {
